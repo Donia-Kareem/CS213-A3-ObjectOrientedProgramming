@@ -1,19 +1,19 @@
 #include <iostream>
 #include <string>
-using namespace std ;
 #include "Gm2.h"
-
+using namespace std ;
 int main() {
-    int choice,ex;
+    string choice,ex;
     Player* players[2];
     players[0] = new Player (1, 'X');
-    cout<<"if you want game 1 enter 1\n if you want game 2 enter 2\n if you want game 3 enter 3\n";
+    cout<<"If You Want Pyramic Tic-Tac-Toe Game enter 1\n If You Want Four-in-a-row Game enter 2\n "
+          "If You Want 5 x 5 Tic Tac Toe Game  enter 3\n"" If You Want e X-O Game  enter 4\n" ;
     cin>>ex;
-    if (ex == 1){
-        cout << "Welcome to FCAI first  Game. :)\n";
+    if (ex == "1"){
+        cout << "Welcome to FCA first  Game. :)\n";
         cout << "Press 1 if you want to play with computer:\n ";
         cin >> choice;
-        if (choice != 1)
+        if (choice != "1")
             players[1] = new Player (2, 'o');
         else
             //Player pointer points to child
@@ -21,11 +21,11 @@ int main() {
         GameManager gm (new my_triangle , players);
         gm.run();
     }
-    else if (ex == 2){
-        cout << "Welcome to FCAI second  Game. :)\n";
+    else if (ex == "2"){
+        cout << "Welcome to FCA second  Game. :)\n";
         cout << "Press 1 if you want to play with computer:\n ";
         cin >> choice;
-        if (choice != 1)
+        if (choice != "1")
             players[1] = new Player (2, 'o');
         else
             //Player pointer points to child
@@ -33,16 +33,30 @@ int main() {
         GmMngr gem  (new  Connect4Board(), players);
         gem.run_gm2();
     }
-    else if (ex == 3) {
-        cout << "Welcome to FCAI third  Game. :)\n";
+    else if (ex == "3") {
+        cout << "Welcome to FCA third  Game. :)\n";
         cout << "Press 1 if you want to play with computer:\n ";
         cin >> choice;
-        if (choice != 1)
+        if (choice != "1")
             players[1] = new Player (2, 'O');
         else//Player pointer points to child
             players[1] = new RandomPlayer ('O', 5);
         gm_3_mng game_3 (new gm_3(), players);
         game_3.run_gm3();
     }
+    else if (ex == "4"){
+        cout << "Welcome to FCA third  Game. :)\n";
+        cout << "Press 1 if you want to play with computer:\n ";
+        cin >> choice;
+        if (choice != "1")
+            players[1] = new Player (2, 'O');
+        else//Player pointer points to child
+            players[1] = new RandomPlayer ('O', 3);
+       GameManager X_O (new X_O_Board(), players);
+        X_O.run();
+    }
+    else
+        cout<<"YOU OPTION FALSE \n";
+
     system ("pause");
 }

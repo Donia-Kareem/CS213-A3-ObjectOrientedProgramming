@@ -38,7 +38,7 @@ public:
     virtual void get_move_2(int& x, int& y);
 
     string to_string();// Give player info as a string
-    char get_symbol();// Get symbol used by player
+    char get_symbol() const;// Get symbol used by player
 };
 // This class represents a random computer player
 // that generates random positions x y (0 to 2)
@@ -105,5 +105,15 @@ public:
     GmMngr ( Board* , Player* playerPtr[2]);
     void run_gm2();
 };
+class X_O_Board :public Board {
+public:
+    X_O_Board ();
+    bool update_board (int x, int y, char mark);
+    void display_board();
+    bool is_winner(char symbol );
+    bool is_draw();
+    bool game_is_over();
+};
+
 
 #endif //CS213_A3_OBJECTORIENTEDPROGRAMMING_GM2_H
