@@ -1,3 +1,10 @@
+// File name:CS213_A3_OBJECTORIENTEDPROGRAMMING_GM2_H
+// Purpose:three games type tic tac toe
+// Author(s): Menna Ali Abd elbaky , Donia Kareem Muhammed
+// ID(s): 20221168 , 20221051
+// Section:s3
+// Date:22/12/2023
+// Version:v3
 #include <iostream>
 #include <string>
 #include "Gm2.h"
@@ -6,7 +13,7 @@ int main() {
     string choice,ex;
     Player* players[2];
     players[0] = new Player (1, 'X');
-    cout<<"If You Want Pyramic Tic-Tac-Toe Game enter 1\n If You Want Four-in-a-row Game enter 2\n "
+    cout<<"If You Want Pyramid Tic-Tac-Toe Game enter 1\n If You Want Four-in-a-row Game enter 2\n "
           "If You Want 5 x 5 Tic Tac Toe Game  enter 3\n"" If You Want e X-O Game  enter 4\n" ;
     cin>>ex;
     if (ex == "1"){
